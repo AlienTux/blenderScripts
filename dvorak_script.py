@@ -1,4 +1,9 @@
 # Copyright 2015 Julian Sivertsen
+#
+# original post in BlenderArtists: https://blenderartists.org/t/dvorak-key-configration-transformer/630922
+
+# Modified by AlienTux from the Norweigan Dvorak to US Dvorak
+# Also added a part to modify addon keymaps
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
