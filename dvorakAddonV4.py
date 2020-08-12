@@ -38,7 +38,7 @@ bl_info = {
     'author': 'AlienTux',
     'version': (0, 0, 1),
     'blender': (2, 80, 0),
-    'location': 'Press \'F3\' then type type "Dvorak" to see commands',
+    'location': 'Press \'F3\' then type type "Dvorak" to see options',
     'description': 'Change all keybindings to Dvorak Layout'
 }
 
@@ -95,7 +95,7 @@ def showMessageBox(message = "", title = "Message Box", icon = 'INFO'):
 
  
 class dvorakLayout(bpy.types.Operator):
-    bl_idname = 'dvorak.dvorak_layout'
+    bl_idname = 'keymap.dvorak_layout'
     bl_label = 'Change all unmodified keyboard bindings to Dvorak Layout'
     bl_options = {"REGISTER", "UNDO"}
 
@@ -142,9 +142,9 @@ class dvorakLayout(bpy.types.Operator):
         return {"FINISHED"}
 
 class dvorakLayoutRestore(bpy.types.Operator):
-    bl_idname = 'dvorak.dvorak_layout_restore'
+    bl_idname = 'keymap.dvorak_layout_restore'
 
-    bl_label = 'Restore ALL keymays to default (usually from Dvorak Addon)'
+    bl_label = 'Restore from Dvorak Layout to Blender (QWERTY) default'
     bl_options = {"REGISTER", "UNDO"}
 
     def execute(self, context):
@@ -168,6 +168,7 @@ def register():
 def unregister():
     bpy.utils.register_class(dvorakLayoutRestore)
     bpy.utils.unregister_class(dvorakLayout)
-    
+ 
+ 
 if __name__ == '__main__':
     register()
