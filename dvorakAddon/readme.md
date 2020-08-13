@@ -1,0 +1,1 @@
+Just download the _.py_ file and install it like a regular add-on

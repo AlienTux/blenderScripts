@@ -6,7 +6,9 @@ This is a (very basic) collection of scripts I have written myself and find usef
 
 The first and most important addon (for me) in here is the **Dvorak Keyboard Layout mapper**.
 
-The whole addon is called: _dvorakAddon.py_
+The whole addon is called: _dvorakAddon/dvorakAddon.py_
+
+Blender Artists thread: [https://blenderartists.org/t/dvorak-keymap-add-on-actually-any-keyboard-layout-coleman-azerty-qwertz-etc/1246938](https://blenderartists.org/t/dvorak-keymap-add-on-actually-any-keyboard-layout-coleman-azerty-qwertz-etc/1246938)
 
 ### Installation
 
