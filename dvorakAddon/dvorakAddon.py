@@ -36,9 +36,9 @@ bl_info = {
     'name': 'Dvorak Layout',
     'category': 'Interface',
     'author': 'AlienTux',
-    'version': (0, 0, 1),
+    'version': (0, 0, 2),
     'blender': (2, 80, 0),
-    'location': 'Press \'F3\' then type type "Dvorak" to see options',
+    'location': 'Blender Icon (next to File) -> System',
     'description': 'Change all keybindings to Dvorak Layout'
 }
 
@@ -89,13 +89,13 @@ conversion_map = {
 def showMessageBox(message = "", title = "Message Box", icon = 'INFO'):
 
     def draw(self, context):
-        self.layout.label(text = 	message)
+        self.layout.label(text = message)
 
     bpy.context.window_manager.popup_menu(draw, title = title, icon = icon)
 
  
 class dvorakLayout(bpy.types.Operator):
-    bl_idname = 'keymap.dvorak_layout'
+    bl_idname = 'dvorak.dvorak_layout'
     bl_label = 'Change all unmodified keyboard bindings to Dvorak Layout'
     bl_options = {"REGISTER", "UNDO"}
 
@@ -142,9 +142,9 @@ class dvorakLayout(bpy.types.Operator):
         return {"FINISHED"}
 
 class dvorakLayoutRestore(bpy.types.Operator):
-    bl_idname = 'keymap.dvorak_layout_restore'
+    bl_idname = 'dvorak.dvorak_layout_restore'
 
-    bl_label = 'Restore from Dvorak Layout to Blender (QWERTY) default'
+    bl_label = 'Restore ALL keymays to default (usually from Dvorak Addon)'
     bl_options = {"REGISTER", "UNDO"}
 
     def execute(self, context):
@@ -161,14 +161,21 @@ class dvorakLayoutRestore(bpy.types.Operator):
         
         return {"FINISHED"}
  
+def dvorakMenuOne(self, context):
+    self.layout.operator(dvorakLayout.bl_idname)
+
+def dvorakMenuTwo(self, context):
+    self.layout.operator(dvorakLayoutRestore.bl_idname)
+    
 def register():
     bpy.utils.register_class(dvorakLayout)
     bpy.utils.register_class(dvorakLayoutRestore)
+    bpy.types.TOPBAR_MT_app_system.append(dvorakMenuOne)
+    bpy.types.TOPBAR_MT_app_system.append(dvorakMenuTwo)
  
 def unregister():
     bpy.utils.register_class(dvorakLayoutRestore)
     bpy.utils.unregister_class(dvorakLayout)
- 
- 
+    
 if __name__ == '__main__':
     register()
