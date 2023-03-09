@@ -1,6 +1,6 @@
 # Simple Blender addons & scripts
 
-This is a (very basic) collection of scripts I have written myself and find useful.
+This is a (very basic) collection of scripts I have written either myself or found around the web and collected.
 
 ## Dvorak Keyboard Layout
 
