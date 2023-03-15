@@ -170,8 +170,8 @@ def dvorakMenuTwo(self, context):
 def register():
     bpy.utils.register_class(dvorakLayout)
     bpy.utils.register_class(dvorakLayoutRestore)
-    bpy.types.TOPBAR_MT_app_system.append(dvorakMenuOne)
-    bpy.types.TOPBAR_MT_app_system.append(dvorakMenuTwo)
+    bpy.types.VIEW3D_MT_object.append(dvorakMenuOne)
+    bpy.types.VIEW3D_MT_object.append(dvorakMenuTwo)
  
 def unregister():
     bpy.utils.register_class(dvorakLayoutRestore)
